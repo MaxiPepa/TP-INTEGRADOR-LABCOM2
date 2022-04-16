@@ -13,20 +13,36 @@
 <body>
     <header>
         <h1>
-            <span>Clima App</span>
+            <img src="img/clima.png"><span>Clima App</span>
         </h1>
         <nav>
             <ul>
-                <li><a href="/index.html">Mi App</a></li>
-                <li><a href="/add-city.html">Agregar Ciudad</a></li>
+                <li><a href="./index.html">Mi App</a></li>
+                <li><a href="./add-city.html">Agregar Ciudad</a></li>
                 <li class="current-page"><a href="#">Ayuda</a></li>
             </ul>
         </nav>
     </header>
     <!-- Contenido principal de la página -->
     <main>
-        <h2>Ayuda</h2>
+        <h2>Ayuda Clima App 1.0</h2>
+        <p>Esta App te permite consultar el clima de una ciudad en particular utilizando la API de <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></p>
+        <p>Para poder consultar el clima, primero debera <a href="./add-city.html">agregar una ciudad</a> y 
+            luego seleccionar la ciudad en cuestión desde la página <a href="./index.html">Clima</a></p>
         <section>
+            <form action="">
+                <label for="name">Nombre:</label>
+                <input name="name" type="text"><br>
+
+                <label for="email">Email:</label>
+                <input name="email" type="email"><br>
+
+                <label for="mesaje">Mensaje:</label>
+                <textarea name="mesaje" cols="30" rows="10"></textarea><br>
+
+                <button>Limpiar</button>
+                <button>Enviar</button>
+            </form>
         </section>
     </main>
     <footer>
