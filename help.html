@@ -8,6 +8,7 @@
     <link rel="icon" href="img/icon.png">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/help.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="./index.html">Mi App</a></li>
+                <li><a href="./index.html">Clima</a></li>
                 <li><a href="./add-city.html">Agregar Ciudad</a></li>
                 <li class="current-page"><a href="#">Ayuda</a></li>
             </ul>
@@ -30,18 +31,20 @@
         <p>Para poder consultar el clima, primero debera <a href="./add-city.html">agregar una ciudad</a> y 
             luego seleccionar la ciudad en cuestión desde la página <a href="./index.html">Clima</a></p>
         <section>
-            <form action="">
+            <form class="help" action="">
                 <label for="name">Nombre:</label>
-                <input id="name" name="name" type="text"><br>
+                <input id="name" name="name" type="text">
 
                 <label for="email">Email:</label>
-                <input id="email" name="email" type="email"><br>
+                <input id="email" name="email" type="email">
 
-                <label for="mesaje">Mensaje:</label>
-                <textarea id="mesaje" name="mesaje" cols="30" rows="10"></textarea><br>
+                <label for="textArea">Mensaje:</label>
+                <textarea id="textArea" name="metextArea" cols="30" rows="10"></textarea>
 
                 <button>Limpiar</button>
                 <button>Enviar</button>
+
+                <p class="error">Ingrese un Email válido</p>
             </form>
         </section>
     </main>

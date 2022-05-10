@@ -13,6 +13,9 @@
     --color-back-active: #04957d;
     --color-gradient: linear-gradient(to right, var(--color-theme),
             var(--color-back-active));
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
 }
 
 body {
@@ -36,7 +39,9 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--color-theme);
+    background: var(--color-gradient);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 nav>ul {
@@ -64,6 +69,8 @@ nav li.current-page a {
     color: var(--color-theme);
     background-color: var(--color-active);
     pointer-events: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 main {
@@ -105,7 +112,7 @@ main section {
 footer {
     position: fixed;
     bottom: 0px;
-    background: var(--color-theme);
+    background: var(--color-gradient);
     width: 100%;
     text-align: center;
     padding-top: 10px;
@@ -119,6 +126,33 @@ footer p {
 
 main p {
     margin-bottom: 16px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+select {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--color-theme);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
 
 /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
