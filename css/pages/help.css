@@ -13,7 +13,3 @@ button {
     margin-right: 5px;
     margin-left: 5px;
 }
-
-p.error {
-    background-color: var(--color-error);
-}
