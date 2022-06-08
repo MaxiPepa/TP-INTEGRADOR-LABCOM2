@@ -157,6 +157,15 @@ textarea {
     margin-bottom: 5px;
 }
 
+.success, .error, .warning {
+    border-radius: 20px;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    align-self: normal;
+}
+
 /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
 @media (min-width: 400px) {
     main {

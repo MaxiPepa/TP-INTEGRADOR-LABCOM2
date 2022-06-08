@@ -14,15 +14,6 @@ button {
     margin-left: 5px;
 }
 
-.help>p {
-    border-radius: 20px;
-    color: white;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    align-self: normal;
-}
-
 p.error {
     background-color: var(--color-error);
 }
