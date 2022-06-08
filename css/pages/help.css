@@ -1,3 +1,10 @@
+.helpContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .help {
     display: flex;
     flex-direction: column;
