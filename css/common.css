@@ -139,6 +139,15 @@ input {
 select {
     padding: 8px;
     border-radius: 5px;
+    border: 2px solid black;
+}
+
+textarea {
+    resize: none;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    border: 2px solid black;
 }
 
 button {
@@ -152,12 +161,6 @@ button {
     margin-left: 5px;
 }
 
-textarea {
-    resize: none;
-    padding: 8px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}
 
 .alert {
     border-radius: 20px;
