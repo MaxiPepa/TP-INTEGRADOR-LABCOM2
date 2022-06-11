@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/add-city.css">
     <script src="js/common.js" defer></script>
-    <script src="js/pages/add-city.js"></script>
+    <script src="js/pages/add-city.js" defer></script>
 </head>
 
 <body>
@@ -30,14 +30,10 @@
     <main>
         <h2>Agregar Ciudad</h2>
         <section>
-            <form class= "add-city" action="">
-                <label for="cityAdd">Ingrese la ciudad a agregar:</label>
-                <input id="cityAdd" name="cityAdd" type="text">
-                <button>Agregar</button>
-
-                <p class="alert success">Ciudad agregada con éxito</p>
-                <p class="alert error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>
-                <p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>
+            <form id="add-city" class= "add-city" action="">
+                <label for="inputCity">Ingrese la ciudad a agregar:</label>
+                <input id="inputCity" name="inputCity" type="text">
+                <button id="buttonAdd">Agregar</button>
             </form> 
         </section>      
     </main>
