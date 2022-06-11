@@ -14,26 +14,36 @@ function validateCity(newCity) {
   
     for (let i = 0; i < cities.length; i++) {
         if (newCity == cities[i]) {
-            return false
+            return "warning"
         }
     }
 
-    return true
+    return "success"
+}
+
+function removeMessage() {
+    setTimeout(function() {
+        document.getElementsByClassName("alert")[0].remove();
+    }, 5000);
 }
 
 function addCityToLocalStorage() {
     let cities = getCitiesFromLocalStorage();
     let newCity = document.getElementById("inputCity").value;
 
-    if (validateCity(newCity)) {
-        cities.push(newCity);
-        localStorage.setItem("CITIES", JSON.stringify(cities));
-    }
-    else {
-        document.getElementById("add-city").innerHTML += warningMessage;
-        setTimeout(function() {
-            document.getElementsByClassName("alert")[0].remove();
-        }, 5000)
+    switch(validateCity(newCity)) {
+        case "success":
+            cities.push(newCity);
+            localStorage.setItem("CITIES", JSON.stringify(cities));
+            document.getElementById("add-city").innerHTML += successMessage;
+            removeMessage();
+            break;
+        case "warning":
+            document.getElementById("add-city").innerHTML += warningMessage;
+            removeMessage();
+            break;
+        case "error":
+            break;
     }
 }
 
