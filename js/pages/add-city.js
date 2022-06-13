@@ -6,10 +6,14 @@ function validateCity(newCity) {
             return "warning";
         };
     };
+    
+    if (consultAPI(newCity) == "error") {
+        return "error";
+    }
+    else {
+        return "success";
+    };
 
-    consultAPI(newCity);
-
-    return "success";
 }
 
 function removeMessage() {
