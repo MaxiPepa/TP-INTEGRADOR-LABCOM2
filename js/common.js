@@ -16,10 +16,27 @@ function consultAPI(cityName) {
             if (!response.ok) return "error";
             return response.json();
         })
-        .then(data => console.log(data))
-        .catch(error => {return "error"})
+        .then(data => {
+            showWeather(data);
+        })
 }
 
-function showWeather() {
-    
+function showWeather(data) {
+    let city
+    let temp
+    let feelsLike
+    let humidity
+    let wind
+    let pressure
+
+    let card = `<div class="card">
+                    <h3>${city}</h3>
+                    <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="Imagen">
+                    <p>Temperatura: ${temp}°</p>
+                    <p>Sensación Térmica: ${feelsLike}°</p>
+                    <p>Humedad: ${humidity}%</p>
+                    <p>Velocidad del Viento: ${wind}km/h</p>
+                    <p>Presión: ${pressure} P</p>
+                </div>`
+    return card
 }

@@ -1,5 +1,6 @@
+let selector = document.getElementById("select-city");
+
 function addCitiesToSelector() {
-    let selector = document.getElementById("select-city");
     let cities = getCitiesFromLocalStorage();
 
     if (cities.length == 0) {
@@ -12,5 +13,14 @@ function addCitiesToSelector() {
         }
     }
 }
+
+function createCard() {
+    let card = consultAPI(selector.value);
+    let section = document.getElementById("section-weather-result");
+    section += card
+}
+
+let consultButton = document.getElementById("consultWeather");
+consultButton.addEventListener("click", createCard)
 
 addCitiesToSelector();
