@@ -1,13 +1,15 @@
 function validateCity(newCity) {
-    let cities = getCitiesFromLocalStorage()
+    let cities = getCitiesFromLocalStorage();
   
     for (let i = 0; i < cities.length; i++) {
         if (newCity == cities[i]) {
-            return "warning"
-        }
-    }
+            return "warning";
+        };
+    };
 
-    return "success"
+    consultAPI(newCity);
+
+    return "success";
 }
 
 function removeMessage() {
@@ -32,13 +34,15 @@ function addCityToLocalStorage() {
             removeMessage();
             break;
         case "error":
+            document.getElementById("add-city").innerHTML += errorMessage;
+            removeMessage();
             break;
-    }
-}
+    };
+};
 
-let successMessage = '<p class="alert success">Ciudad agregada con éxito</p>'
-let errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>'
-let warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>'
+let successMessage = '<p class="alert success">Ciudad agregada con éxito</p>';
+let errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
+let warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
 
 let buttonAddCity = document.getElementById("buttonAdd");
 buttonAddCity.addEventListener("click", addCityToLocalStorage)
