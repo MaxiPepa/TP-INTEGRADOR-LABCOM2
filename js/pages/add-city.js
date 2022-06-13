@@ -6,6 +6,10 @@ function validateCity(newCity) {
             return "warning";
         };
     };
+
+    if(newCity == "") {
+        return "error"
+    }
     
     if (consultAPI(newCity) == "error") {
         return "error";
@@ -13,7 +17,6 @@ function validateCity(newCity) {
     else {
         return "success";
     };
-
 }
 
 function removeMessage() {
@@ -49,4 +52,3 @@ let errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encu
 let warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
 
 let buttonAddCity = document.getElementById("buttonAdd");
-buttonAddCity.addEventListener("click", addCityToLocalStorage)

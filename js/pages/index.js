@@ -15,12 +15,14 @@ function addCitiesToSelector() {
 }
 
 function createCard() {
+    console.log(selector.value)
     let card = consultAPI(selector.value);
     let section = document.getElementById("section-weather-result");
-    section += card
+    section.innerHTML += card
+
+    return false;
 }
 
 let consultButton = document.getElementById("consultWeather");
-consultButton.addEventListener("click", createCard)
 
 addCitiesToSelector();
