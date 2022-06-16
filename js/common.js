@@ -22,12 +22,12 @@ function consultAPI(cityName) {
 }
 
 function showWeather(data) {
-    let city
-    let temp
-    let feelsLike
-    let humidity
-    let wind
-    let pressure
+    let icon = data.weather[0].icon
+    let temp = data.main.temp
+    let feelsLike = data.main.feels_like
+    let humidity = data.main.humidity
+    let wind = data.wind.speed
+    let pressure = data.main.pressure
 
     let card = `<div class="card">
                     <h3>${city}</h3>
