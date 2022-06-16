@@ -15,10 +15,7 @@ function addCitiesToSelector() {
 }
 
 function createCard() {
-    console.log(selector.value)
-    let card = consultAPI(selector.value);
-    let section = document.getElementById("section-weather-result");
-    section.innerHTML += card
+    consultAPI(selector.value);
 
     return false;
 }

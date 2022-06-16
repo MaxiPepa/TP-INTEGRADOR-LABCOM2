@@ -22,21 +22,27 @@ function consultAPI(cityName) {
 }
 
 function showWeather(data) {
-    let icon = data.weather[0].icon
-    let temp = data.main.temp
-    let feelsLike = data.main.feels_like
-    let humidity = data.main.humidity
-    let wind = data.wind.speed
-    let pressure = data.main.pressure
+    let city = data.name;
+    let icon = data.weather[0].icon;
+    let temp = data.main.temp;
+    let feelsLike = data.main.feels_like;
+    let humidity = data.main.humidity;
+    let wind = data.wind.speed;
+    let pressure = data.main.pressure;
 
     let card = `<div class="card">
                     <h3>${city}</h3>
-                    <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="Imagen">
+                    <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Imagen">
                     <p>Temperatura: ${temp}°</p>
                     <p>Sensación Térmica: ${feelsLike}°</p>
                     <p>Humedad: ${humidity}%</p>
                     <p>Velocidad del Viento: ${wind}km/h</p>
                     <p>Presión: ${pressure} P</p>
                 </div>`
-    return card
+    
+    let section = document.getElementById("section-weather-result");
+    if(section) {
+        section.innerHTML = "";
+        section.innerHTML += card;
+    }
 }
