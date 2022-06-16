@@ -22,7 +22,7 @@ function validateCity(newCity) {
 function removeMessage() {
     setTimeout(function() {
         document.getElementsByClassName("alert")[0].remove();
-    }, 5000);
+    }, 3000);
 }
 
 function addCityToLocalStorage() {
