@@ -29,15 +29,15 @@ async function addCityToLocalStorage() {
         case "success":
             cities.push(newCity);
             localStorage.setItem("CITIES", JSON.stringify(cities));
-            document.getElementById("add-city").innerHTML += successMessage;
+            document.getElementById("messajeBox").innerHTML += successMessage;
             removeMessage();
             break;
         case "warning":
-            document.getElementById("add-city").innerHTML += warningMessage;
+            document.getElementById("messajeBox").innerHTML += warningMessage;
             removeMessage();
             break;
         case "error":
-            document.getElementById("add-city").innerHTML += errorMessage;
+            document.getElementById("messajeBox").innerHTML += errorMessage;
             removeMessage();
             break;
     };
@@ -48,4 +48,4 @@ let errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encu
 let warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
 
 let buttonAddCity = document.getElementById("buttonAdd");
-buttonAddCity.addEventListener("click", addCityToLocalStorage)
+buttonAddCity.addEventListener("click", addCityToLocalStorage);
