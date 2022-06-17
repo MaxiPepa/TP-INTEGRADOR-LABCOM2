@@ -13,12 +13,15 @@ function consultAPI(cityName) {
     let apiKey = "6cfae99f0e3ec73740b84a68b52d0398"
     return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
         .then(response => {
-            if (!response.ok) return "error";
-            return response.json();
+            if (response.ok) return response.json();
+            throw new Error("error")
         })
         .then(data => {
             showWeather(data);
         })
+        .catch(error => {
+            return "error"
+        });
 }
 
 function showWeather(data) {
