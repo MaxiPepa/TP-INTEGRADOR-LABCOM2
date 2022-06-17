@@ -1,4 +1,4 @@
-function validateCity(newCity) {
+async function validateCity(newCity) {
     let cities = getCitiesFromLocalStorage();
   
     for (let i = 0; i < cities.length; i++) {
@@ -7,11 +7,7 @@ function validateCity(newCity) {
         };
     };
 
-    if(newCity == "") {
-        return "error"
-    }
-    
-    if (consultAPI(newCity) == "error") {
+    if (await consultAPI(newCity) == "error") {
         return "error";
     }
     else {
@@ -25,11 +21,11 @@ function removeMessage() {
     }, 3000);
 }
 
-function addCityToLocalStorage() {
+async function addCityToLocalStorage() {
     let cities = getCitiesFromLocalStorage();
     let newCity = document.getElementById("inputCity").value;
 
-    switch(validateCity(newCity)) {
+    switch(await validateCity(newCity)) {
         case "success":
             cities.push(newCity);
             localStorage.setItem("CITIES", JSON.stringify(cities));
@@ -52,3 +48,4 @@ let errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encu
 let warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
 
 let buttonAddCity = document.getElementById("buttonAdd");
+buttonAddCity.addEventListener("click", addCityToLocalStorage)

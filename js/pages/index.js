@@ -16,10 +16,9 @@ function addCitiesToSelector() {
 
 function createCard() {
     consultAPI(selector.value);
-
-    return false;
 }
 
 let consultButton = document.getElementById("consultWeather");
+consultButton.addEventListener("click", createCard)
 
 addCitiesToSelector();
