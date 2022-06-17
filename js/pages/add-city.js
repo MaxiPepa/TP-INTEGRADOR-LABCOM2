@@ -24,6 +24,7 @@ function removeMessage() {
 async function addCityToLocalStorage() {
     let cities = getCitiesFromLocalStorage();
     let newCity = document.getElementById("inputCity").value;
+    newCity = newCity.toUpperCase()
 
     switch(await validateCity(newCity)) {
         case "success":
